@@ -1,0 +1,595 @@
+
+
+
+
+
+[0:0:0:0:0] [power_management_init] Enter battery saving voltage = 3mV; Leave battery saving warmup voltage = 3mV; Leave battery saving voltage = 3mV
+[0:0:0:0:1] [main init] Init Main Done
+[0:0:0:0:1] [measurements_v2_manager_add_measurement] Measurement packet stored.
+[0:0:0:0:2] [reset_reason_add_measurement] measurement added; details: value = 0
+[0:0:0:0:2] [0:0:0:0:3] [measurements_v2_manager_add_measurement] Measurement packet stored.
+[0:0:0:0:3] [battery_saving_mode_add_measurement] Measurement added; Details: value = 1
+[0:0:0:0:4] [power_management_loop] Move to powered on state.
+[0:0:0:0:4] [hello_add_basic_info_message] Hello message added; Details: fw version = ; ble address = 0x0000000000000000; seq number = 1; size = 68; content = [02002502a9cc49bc130a4400000000000000040100010000002a111f00000000000000000000000000000000000000000000000000000000000000060000012075039aa7]
+[0:0:0:0:9] [cellular_start_power_off] power off will begin asap
+[0:0:0:0:9] [app_body_temperature_init] Init started 
+[0:0:0:0:9] [charge_loop] Powered up sucessfully
+[0:0:0:0:10] [charge_loop] Going to Idle
+[0:0:0:0:10] [main] Program init ensurements concatenated = 2; seq number = 0; size = 48; content = [02002502a9cc49bc130a4400000000000000010c000000000016020436000000000500000000025a000000000501c436]
+[0:0:0:0:13] [measurements_v2_manager_delete_measurements] Deleting measurements.
+[0:0:0:0:10] [cellular_power_off] power off started; start to discharge capacitors just for prevention
+[0:0:0:0:14] [charge_loop] data collected; voltage = 3.85V, percentage = 58%
+[0:0:0:0:15] [battery_saving_mode_check] Current vo[0:0:0:0:23] ADS1114 config successful
+[0:0:0:0:23] [ads1114_readValue_cb] data collected; voltage = 0.019V 
+[0:0:0:4:677] [cellular_power_off] ending to discharge capacitors
+[0:0:0:4:677] [cellular_power_off] clear pins
+[0:0:0:4:677] [cellular_power_off] power off ended
+[0:0:0:4:678] [cellular_start_power_on] power on will begin asap
+[0:0:0:4:678] [cellular_power_on] power on started; status off so let's do power on procedure
+[0:0:0:6:1] [app_body_temperature_loop] Circuit powered on
+[0:0:0:6:1] [app_body_temperature_loop] Read started
+[0:0:0:6:1] [app_body_temperature_loop] Circuit powered off
+[0:0:0:6:1] [app_body_temperature_loop] Calculated Res:3116, Low Resolution temperature:36.2ºC
+[0:0:0:6:3] [ads1114_readValue_cb] data collected; voltage = 0.016V 
+[0:0:0:6:2] [app_body_temperature_loop] Let's upload
+[0:0:0:6:4] [measurements_v2_manager_add_measurement] Measurement packet stored.
+[0:0:0:6:4] [ntc_add_temperature_measurement] measurement added; details: temperature = 36.2ºC
+[0:0:0:6:5] [measurements_v2_manager_send_measurements] Measurement packet added; Details: measurements concatenated = 1; seq number = 3; size = 40; content = [02002502a9cc49bc130a4400000000000017740c00030000000e01000100000000064210cccd21e5]
+[0:0:0:6:7] [measurements_v2_manager_delete_measurements] Deleting measurements.
+[0:0:0:6:24] [app_body_temperature_loop] Circuit powered on
+[0:0:0:6:24] [app_body_temperature_loop] Read started
+[0:0:0:6:24] [app_body_temperature_loop] Circuit powered off
+[0:0:0:6:24] [app_body_temperature_loop] Calculated Res:3131, Low Resolution temperature:36.09ºC
+[0:0:0:6:26] [ads1114_readValue_cb] data collected; voltage = 0.016V 
+[0:0:0:6:26] [app_body_temperature_loop] Let's upload
+[0:0:0:6:27] [measurements_v2_manager_add_measurement] Measurement packet stored.
+[0:0:0:6:27] [ntc_add_temperature_measurement] measurement added; details: temperature = 36.09ºC
+[0:0:0:6:28] [measurements_v2_manager_send_measurements] Measurement packet added; Details: measurements concatenated = 1; seq number = 4; size = 40; content = [02002502a9cc49bc130a44000000000000178b0c00040000000e010001000000000642106666a57f]
+[0:0:0:6:30] [measurements_v2_manager_delete_measurements] Deleting measurements.
+[0:0:0:7:822] [cellular_power_on] power on ended
+[0:0:0:10:10] [main] Another minute...
+AT
+OK
+AT+GMR
+Revision:1951B01SIM7080
+OK[0:0:0:10:828] [cellular_warm_up_state_machine] SIMCOM7080 detected
+
+AT+CIMI
+268069636139277
+OK
+AT+CBAND=ALL_MODE
+OK
+AT+CFUN=0
++CPIN: NOT READY
+OK
+AT+CGDCONT=1,"IP","internetm2m"
+OK[cellular_data_session_state_machine] MCC: 268 , MNC: 6 
+[cellular_data_session_state_machine] MCC: 268 , MNC: 6 
+[cellular_data_session_state_machine] MCC: 268 , MNC: 6 
+[cellular_data_session_state_machine] MCC: 268 , MNC: 6 
+[cellular_data_session_state_machine] MCC: 268 , MNC: 6 
+[cellular_data_session_state_machine] MCC: 268 , MNC: 6 
+[cellular_data_session_state_machine] MCC: 268 , MNC: 6 
+[cellular_data_session_state_machine] MCC: 268 , MNC: 6 
+[cellular_data_session_state_machine] MCC: 268 , MNC: 6 
+
+AT+CNCFG=1,1,"internetm2m"[cellular_data_session_state_machine] MCC: 268 , MNC: 6 
+[cellular_data_session_state_machine] MCC: 268 , MNC: 6 
+[cellular_data_session_state_machine] MCC: 268 , MNC: 6 
+[cellular_data_session_state_machine] MCC: 268 , MNC: 6 
+[cellular_data_session_state_machine] MCC: 268 , MNC: 6 
+[cellular_data_session_state_machine] MCC: 268 , MNC: 6 
+[cellular_data_session_state_machine] MCC: 268 , MNC: 6 
+[cellular_data_session_state_machine] MCC: 268 , MNC: 6 
+
+OK[cellular_data_session_state_machine] MCC: 268 , MNC: 6 
+
+AT+CGDCONT?
++CGDCONT: 1,"IP","internetm2m","0.0.0.0",0,0,0
++CGDCONT: 2,"IPV4V6","ims","0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0",0,0,0
+OK
+AT+CFUN=1
+OK[0:0:0:12:3] [app_body_temperature_loop] Circuit powered on
+[0:0:0:12:3] [app_body_temperature_loop] Read started
+[0:0:0:12:3] [app_body_temperature_loop] Circuit powered off
+[0:0:0:12:4] [app_body_temperature_loop] Calculated Res:3131, Low Resolution temperature:36.09ºC
+[0:0:0:12:5] [ads1114_readValue_cb] data collected; voltage = 0.023V 
+[0:0:0:12:5] [app_body_temperature_loop] Let's upload
+[0:0:0:12:6] [measurements_v2_manager_add_measurement] Measurement packet stored.
+[0:0:0:12:6] [ntc_add_temperature_measurement] measurement added; details: temperature = 36.09ºC
+[0:0:0:12:7] [measurements_v2_manager_send_measurements] Measurement packet added; Details: measurements concatenated = 1; seq number = 5; size = 40; content = [02002502a9cc49bc130a440000000000002ee60c00050000000e010001000000000642106666b59d]
+[0:0:0:12:10] [measurements_v2_manager_delete_measurements] Deleting measurements.
+[0:0:0:12:26] [app_body_temperature_loop] Circuit powered on
+[0:0:0:12:26] [app_body_temperature_loop] Read started
+[0:0:0:12:26] [app_body_temperature_loop] Circuit powered off
+[0:0:0:12:26] [app_body_temperature_loop] Calculated Res:3102, Low Resolution temperature:36.29ºC[0:0:0:12:28] [ads1114_readValue_cb] data collected; voltage = 0.022V 
+
+[0:0:0:12:28] [app_body_temperature_loop] Let's upload
+[0:0:0:12:29] [measurements_v2_manager_add_measurement] Measurement packet stored.
+[0:0:0:12:29] [ntc_add_temperature_measurement] measurement added; details: temperature = 36.29ºC
+[0:0:0:12:30] [measurements_v2_manager_send_measurements] Measurement packet added; Details: measurements concatenated = 1; seq number = 6; size = 40; content = [02002502a9cc49bc130a440000000000002efd0c00060000000e0100010000000006421133334891]
+[0:0:0:12:33] [measurements_v2_manager_delete_measurements] Deleting measurements.
+
++CPIN: READY
+AT+CGATT?
++CGATT: 0
+OK
+SMS Ready
+AT+CGATT?
++CGATT: 0
+OK
+AT+CGATT?
++CGATT: 0
+OK[0:0:0:15:11] [charge_loop] Read started
+[0:0:0:15:11] [charge_loop] data collected; voltage = 3.832V, percentage = 55%
+[0:0:0:15:12] [measurements_v2_manager_add_measurement] Measurement packet stored.
+[0:0:0:15:12] [charge_add_measurement] measurement added; details: value = 3.832V
+[0:0:0:15:13] [measurements_v2_manager_send_measurements] Measurement packet added; Details: measurements concatenated = 1; seq number = 7; size = 40; content = [02002502a9cc49bc130a440000000000003aa40c00070000000e0100070000000004407548616b98]
+[0:0:0:15:16] [measurements_v2_manager_delete_measurements] Deleting measurements.
+
+AT+CGATT?
++CGATT: 0
+OK
+AT+CGATT?
++CGATT: 0
+OK
+AT+CGATT?
++CGATT: 0
+OK[0:0:0:18:6] [app_body_temperature_loop] Circuit powered on
+[0:0:0:18:6] [app_body_temperature_loop] Read started
+[0:0:0:18:6] [app_body_temperature_loop] Circuit powered off
+[0:0:0:18:6] [app_body_temperature_loop] Calculated Res:3102, Low Resolution temperature:36.29ºC
+[0:0:0:18:8] [ads1114_readValue_cb] data collected; voltage = -0.018V 
+[0:0:0:18:8] [app_body_temperature_loop] Let's upload
+[0:0:0:18:9] [measurements_v2_manager_add_measurement] Measurement packet stored.
+[0:0:0:18:9] [ntc_add_temperature_measurement] measurement added; details: temperature = 36.29ºC
+[0:0:0:18:10] [measurements_v2_manager_send_measurements] Measurement packet added; Details: measurements concatenated = 1; seq number = 8; size = 40; content = [02002502a9cc49bc130a4400000000000046590c00080000000e010001000000000642113333adcd]
+[0:0:0:18:12] [measurements_v2_manager_delete_measurements] Deleting measurements.
+[0:0:0:18:28] [app_body_temperature_loop] Circuit powered on
+[0:0:0:18:28] [app_body_temperature_loop] Read started
+[0:0:0:18:28] [app_body_temperature_loop] Circuit powered off
+[0:0:0:18:28] [app_body_temperature_loop] Calculated Res:3280, Low Resolution temperature:34.9ºC
+[0:0:0:18:30] [ads1114_readValue_cb] data collected; voltage = -0.018V 
+[0:0:0:18:30] [app_body_temperature_loop] Let's upload
+[0:0:0:18:31] [measurements_v2_manager_add_measurement] Measurement packet stored.
+[0:0:0:18:31] [ntc_add_temperature_measurement] measurement added; details: temperature = 34.9ºC
+[0:0:0:18:32] [measurements_v2_manager_send_measurements] Measurement packet added; Details: measurements concatenated = 1; seq number = 9; size = 40; content = [02002502a9cc49bc130a44000000000000466f0c00090000000e0100010000000006420b999aeffb]
+[0:0:0:18:34] [measurements_v2_manager_delete_measurements] Deleting measurements.
+
+AT+CGATT?
++CGATT: 1
+OK
+AT+CGNAPN
++CGNAPN: 1,"internetm2m"
+OK
+AT+CNCFG=1,1,"internetm2m"
+OK
+AT+CNACT=0,1
+OK
+AT+CEREG?
++CEREG: 0,1
+OK
++APP PDP: 0,ACTIVE
+AT+CSQ
++CSQ: 9,99
+OK
+AT+GSN
+860016040025475
+OK
+AT+CCID
+89351060000770858825
+OK
+AT+CIMI
+268069636139277
+OK[0:0:0:18:573] [hello_add_basic_info_message] Hello message added to queue; Details: fw version = ; ble address = 0x0000000000000000; imei = 860016040025475; iccid = 89351060000770858825; seq number = 10; size = 120; content = [02002502a9cc49bc130a44000000000000488d01000a0000005e172e000000000000000000000000000000000000000000000000000000000000002c3139353142303153494d373038301438393335313036303030303737303835383832350f383630303136303430303235343735060000012075035509]
+
+AT+CGATT?
++CGATT: 1
+OK[0:0:0:18:583] [cellular_data_session_state_machine] data session is attached
+[0:0:0:18:583] [cellular_data_session_state_machine] already attached...
+
+AT+CGATT?
++CGATT: 1
+OK
+AT
+OK
+AT+CEREG?
++CEREG: 0,1
+OK
+AT+CSQ
++CSQ: 9,99
+OK
+AT+CSSLCFG="sslversion",1,3
+OK
+AT+SHSSL=1,"baidu_root_ca.cer"
+OK
+AT+SHCONF="URL","http://hub.sensefinity.com"
+OK
+AT+SHCONF="BODYLEN",1024
+OK
+AT+SHCONF="HEADERLEN",350
+OK
+AT+SHCONN[0:0:0:20:10] [main] Another minute...
+
+OK
+AT+SHSTATE?
++SHSTATE: 1
+OK
+AT+SHCHEAD
+OK
+AT+SHAHEAD="Cache-control","no-cache"
+OK
+AT+SHAHEAD="Connection","keep-alive"
+OK
+AT+SHAHEAD="Accept","*/*"
+OK
+AT+SHAHEAD="Version","1"
+OK[0:0:0:22:838] [uplink_loop] Let's add packets to uplink!
+[0:0:0:22:838] [uplink_loop] Trying to upload 1 messages
+[0:0:0:22:838] [cellular_set_data_to_upload] upload data content: AgECqcxJvBMKRAAAAAECACUCqcxJvBMKRAAAAAAAAAAADAALAAAACwECWgAAAAAFAAAAAAA=
+
+AT+SHBOD=72,2000
+> AgECqcxJvBMKRAAAAAECACUCqcxJvBMKRAAAAAAAAAAADAALAAAACwECWgAAAAAFAAAAAAA=
+OK
+AT+SHREQ="",3
+OK[0:0:0:24:8] [app_body_temperature_loop] Circuit powered on
+[0:0:0:24:8] [app_body_temperature_loop] Read started
+[0:0:0:24:8] [app_body_temperature_loop] Circuit powered off
+[0:0:0:24:8] [app_body_temperature_loop] Calculated Res:3280, Low Resolution temperature:34.9ºC
+[0:0:0:24:10] [ads1114_readValue_cb] data collected; voltage = -0.019V 
+[0:0:0:24:10] [app_body_temperature_loop] Let's upload
+[0:0:0:24:11] [measurements_v2_manager_add_measurement] Measurement packet stored.
+[0:0:0:24:11] [ntc_add_temperature_measurement] measurement added; details: temperature = 34.9ºC
+[0:0:0:24:12] [measurements_v2_manager_send_measurements] Measurement packet added; Details: measurements concatenated = 1; seq number = 12; size = 40; content = [02002502a9cc49bc130a440000000000005dcb0c000c0000000e0100010000000006420b999abc91]
+[0:0:0:24:15] [measurements_v2_manager_delete_measurements] Deleting measurements.
+[0:0:0:24:30] [app_body_temperature_loop] Circuit powered on
+[0:0:0:24:30] [app_body_temperature_loop] Read started
+[0:0:0:24:30] [app_body_temperature_loop] Circuit powered off
+[0:0:0:24:30] [app_body_temperature_loop] Calculated Res:3283, Low Resolution temperature:34.9ºC
+[0:0:0:24:32] [ads1114_readValue_cb] data collected; voltage = -0.019V 
+[0:0:0:24:32] [app_body_temperature_loop] Let's upload
+[0:0:0:24:33] [measurements_v2_manager_add_measurement] Measurement packet stored.
+[0:0:0:24:33] [ntc_add_temperature_measurement] measurement added; details: temperature = 34.9ºC
+[0:0:0:24:34] [measurements_v2_manager_send_measurements] Measurement packet added; Details: measurements concatenated = 1; seq number = 13; size = 40; content = [02002502a9cc49bc130a440000000000005de10c000d0000000e0100010000000006420b999aac73]
+[0:0:0:24:36] [measurements_v2_manager_delete_measurements] Deleting measurements.
+
++SHREQ: "POST",201,24[0:0:0:29:203] [uplink_loop] Data successfully uploaded. Deleting packets from queue.
+[0:0:0:29:203] [uplink_loop] Starting read procedure of machinates returning packet.
+
+AT+SHREAD=0,24
+OK[0:0:0:30:10] [main] Another minute...
+[0:0:0:30:11] [app_body_temperature_loop] Circuit powered on
+[0:0:0:30:11] [app_body_temperature_loop] Read started
+[0:0:0:30:11] [app_body_temperature_loop] Circuit powered off
+[0:0:0:30:11] [app_body_temperature_loop] Calculated Res:3283, Low Resolution temperature:34.9ºC
+[0:0:0:30:13] [ads1114_readValue_cb] data collected; voltage = 0.004V 
+[0:0:0:30:13] [charge_loop] Read started
+[0:0:0:30:14] [app_body_temperature_loop] Let's upload
+[0:0:0:30:14] [measurements_v2_manager_add_measurement] Measurement packet stored.
+[0:0:0:30:14] [ntc_add_temperature_measurement] measurement added; details: temperature = 34.9ºC
+[0:0:0:30:15] [measurements_v2_manager_send_measurements] Measurement packet added; Details: measurements concatenated = 1; seq number = 14; size = 40; content = [02002502a9cc49bc130a44000000000000753e0c000e0000000e0100010000000006420b999a9d55]
+[0:0:0:30:18] [measurements_v2_manager_delete_measurements] Deleting measurements.
+[0:0:0:30:18] [charge_loop] data collected; voltage = 3.847V, percentage = 57%
+[0:0:0:30:19] [measurements_v2_manager_add_measurement] Measureme2a9cc49bc130a4400000000000075430c000f0000000e010007000000000440763d715045]
+[0:0:0:30:23] [measurements_v2_manager_delete_measurements] Deleting measurements.
+[0:0:0:30:32] [app_body_temperature_loop] Circuit powered on
+[0:0:0:30:32] [app_body_temperature_loop] Read started
+[0:0:0:30:32] [app_body_temperature_loop] Circuit powered off
+[0:0:0:30:32] [app_body_temperature_loop] Calculated Res:3181, Low Resolution temperature:35.7ºC
+[0:0:0:30:34] [ads1114_readValue_cb] data collected; voltage = 0.004V 
+[0:0:0:30:34] [app_body_temperature_loop] Let's upload
+[0:0:0:30:35] [measurements_v2_manager_add_measurement] Measurement packet stored.
+[0:0:0:30:35] [ntc_add_temperature_measurement] measurement added; details: temperature = 35.7ºC
+[0:0:0:30:36] [measurements_v2_manager_send_measurements] Measurement packet added; Details: measurements concatenated = 1; seq number = 16; size = 40; content = [02002502a9cc49bc130a4400000000000075530c00100000000e0100010000000006420ecccd56a0]
+[0:0:0:30:38] [measurements_v2_manager_delete_measurements] Deleting measurements.
+
++SHREAD: 24[0:0:0:30:229] [uplink_process_downloaded_messages] No messages received.
+[0:0:0:30:237] [uplink_loop] Starting upload procedure.
+[0:0:0:30:237] [uplink_loop] Upload triggered by condition a (queue data size exceeds threshold to upload).
+[0:0:0:30:237] [uplink_loop] Upload triggered by condition c (uplink module is powered on. Let's upload).
+[0:0:0:30:237] [uplink_loop] Upload triggered by condition f (we just finished this upload but we have more to go).
+[0:0:0:30:238] [cellular_http_state_machine] more data received so let's go again without closing the http session
+[0:0:0:30:238] [uplink_loop] Let's add packets to uplink!
+[0:0:0:30:238] [uplink_loop] Trying to upload 8 messages.
+[0:0:0:30:238] [uplink_loop] Concatenating packet with seq number = 1
+[0:0:0:30:238] [uplink_loop] Concatenating packet with seq number = 0
+[0:0:0:30:238] [uplink_loop] Concatenating packet with seq number = 2
+[0:0:0:30:238] [uplink_loop] Concatenating packet with seq number = 3
+[0:0:0:30:238] [uplink_loop] Concatenati
+AT+SHBOD=496,2000
+> AgECqcxJvBMKRAAAAAgCACUCqcxJvBMKRAAAAAAAAHYaAQABAAAAKhEfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAAAEgdQOapwIAJQKpzEm8EwpEAAAAAAAAdh0MAAAAAAAWAgQ2AAAAAAUAAAAAAloAAAAABQHENgIAJQKpzEm8EwpEAAAAAAAAdgwMAAIAAAAOAQAHAAAAAARAdnYAO78CACUCqcxJvBMKRAAAAAAAAF6qDAADAAAADgEAAQAAAAAGQhDMzSHlAgAlAqnMSbwTCkQAAAAAAABekwwABAAAAA4BAAEAAAAABkIQZmalfwIAJQKpzEm8EwpEAAAAAAAARzgMAAUAAAAOAQABAAAAAAZCEGZmtZ0CACUCqcxJvBMKRAAAAAAAAEchDAAGAAAADgEAAQAAAAAGQhEzM0iRAgAlAqnMSbwTCkQAAAAAAAA7egwABwAAAA4BAAcAAAAABEB1SGFrmAAA
+OK
+AT+SHREQ="",3
+OK
++SHREQ: "POST",201,24[0:0:0:34:287] [uplink_loop] Data successfully uploaded. Deleting packets from queue.
+[0:0:0:34:287] [uplink_loop] Starting read procedure of machinates returning packet.
+[0:0:0:34:287] [uplink_loop] Going to delete packet with seq number = 1
+[0:0:0:34:287] [gama_queues_print_seq_numbers] sequence numbers = 0; 2; 3; 4; 5; 6; 7; 8; 9; 10; 12; 13; 14; 15; 16
+[0:0:0:34:287] [uplink_loop] Going to delete packet with seq number = 0
+[0:0:0:34:287] [gama_queues_print_seq_numbers] sequence numbers = 2; 3; 4; 5; 6; 7; 8; 9; 10; 12; 13; 14; 15; 16
+[0:0:0:34:287] [uplink_loop] Going to delete packet with seq number = 2
+[0:0:0:34:287] [gama_queues_print_seq_numbers] sequence numbers = 3; 4; 5; 6; 7; 8; 9; 10; 12; 13; 14; 15; 16
+[0:0:0:34:287] [uplink_loop] Going to delete packet with seq number = 3
+[0:0:0:34:287] [gama_queues_print_seq_numbers] sequence numbers = 4; 5; 6; 7; 8; 9; 10; 12; 13; 14; 15; 16
+[0:0:0:34:287] [uplink_loop] Going to delete packet with seq number = 4
+[0:0:0:34:287] [gama_queues_print_seq_numbers] sequence numbers = 5; 6; 7; 8; 9; 10; 12; 13; 14; 15; 16
+[0:0:0:34:287] [uplink_loop] Going to delete packet with seq number = 5
+[0:0:0:34:287] [gama_queues_print_seq_numbers] sequence numbers = 6; 7; 8; 9; 10; 12; 13; 14; 15; 16
+[0:0:0:34:287] [uplink_loop] Going to delete packet with seq number = 6
+[0:0:0:34:287] [gama_queues_print_seq_numbers] sequence numbers = 7; 8; 9; 10; 12; 13; 14; 15; 16
+[0:0:0:34:287] [uplink_loop] Going to delete packet with seq number = 7
+[0:0:0:34:287] [gama_queues_print_seq_numbers] sequence numbers = 8; 9; 10; 12; 13; 14; 15; 16
+
+AT+SHREAD=0,24
+OK
++SHREAD: 24[0:0:0:35:336] [uplink_process_downloaded_messages] No messages received.
+[0:0:0:35:344] [uplink_loop] Starting upload procedure.
+[0:0:0:35:344] [uplink_loop] Upload triggered by condition a (queue data size exceeds threshold to upload).
+[0:0:0:35:344] [uplink_loop] Upload triggered by condition c (uplink module is powered on. Let's upload).
+[0:0:0:35:344] [uplink_loop] Upload triggered by condition f (we just finished this upload but we have more to go).
+[0:0:0:35:345] [cellular_http_state_machine] more data received so let's go again without closing the http session
+[0:0:0:35:345] [uplink_loop] Let's add packets to uplink!
+[0:0:0:35:345] [uplink_loop] Trying to upload 7 messages.
+[0:0:0:35:345] [uplink_loop] Concatenating packet with seq number = 8
+[0:0:0:35:345] [uplink_loop] Concatenating packet with seq number = 9
+[0:0:0:35:345] [uplink_loop] Concatenating packet with seq number = 10
+[0:0:0:35:345] [uplink_loop] Concatenating packet with seq number = 12
+[0:0:0:35:345] [uplink_loop] Concatenating packet with seq number = 13
+[0:0:0:35:345] [uplink_loop] Concatenating packet with seq number = 14
+[0:0:0:35:345] [uplink_loop] Concate
+> AgECqcxJvBMKRAAAAAcCACUCqcxJvBMKRAAAAAAAAEO4DAAIAAAADgEAAQAAAAAGQhEzM63NAgAlAqnMSbwTCkQAAAAAAABDogwACQAAAA4BAAEAAAAABkILmZrv+wIAJQKpzEm8EwpEAAAAAAAAQYQBAAoAAABeFy4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALDE5NTFCMDFTSU03MDgwFDg5MzUxMDYwMDAwNzcwODU4ODI1Dzg2MDAxNjA0MDAyNTQ3NQYAAAEgdQNVCQIAJQKpzEm8EwpEAAAAAAAALEYMAAwAAAAOAQABAAAAAAZCC5mavJECACUCqcxJvBMKRAAAAAAAACwwDAANAAAADgEAAQAAAAAGQguZmqxzAgAlAqnMSbwTCkQAAAAAAAAU0wwADgAAAA4BAAEAAAAABkILmZqdVQIAJQKpzEm8EwpEAAAAAAAAFM4MAA8AAAAOAQAHAAAAAARAdj1xUEUAAA==
+OK
+AT+SHREQ="",3
+OK[0:0:0:36:13] [app_body_temperature_loop] Circuit powered on
+[0:0:0:36:13] [app_body_temperature_loop] Read started
+[0:0:0:36:13] [app_body_temperature_loop] Circuit powered off
+[0:0:0:36:13] [app_body_temperature_loop] Calculated Res:3180, Low Resolution temperature:35.7ºC
+[0:0:0:36:15] [ads1114_readValue_cb] data collected; voltage = 0.008V 
+[0:0:0:36:15] [app_body_temperature_loop] Let's upload
+[0:0:0:36:16] [measurements_v2_manager_add_measurement] Measurement packet stored.
+[0:0:0:36:16] [ntc_add_temperature_measurement] measurement added; details: temperature = 35.7ºC
+[0:0:0:36:17] [measurements_v2_manager_send_measurements] Measurement packet added; Details: measurements concatenated = 1; seq number = 17; size = 40; content = [02002502a9cc49bc130a440000000000008cb00c00110000000e0100010000000006420ecccd4642]
+[0:0:0:36:19] [measurements_v2_manager_delete_measurements] Deleting measurements.
+[0:0:0:36:34] [app_body_temperature_loop] Circuit powered on
+[0:0:0:36:34] [app_body_temperature_loop] Read started
+[0:0:0:36:34] [app_body_temperature_loop] Circuit powered off
+[0:0:0:36:35] [app_body_temperature_loop] Calculated Res:3165, Low Resolution temperature:35.79ºC
+[0:0:0:36:36] [ads1114_readValue_cb] data collected; voltage = 0.008V 
+[0:0:0:36:36] [app_body_temperature_loop] Let's upload
+[0:0:0:36:37] [measurements_v2_manager_add_measurement] Measurement packet stored.
+[0:0:0:36:37] [ntc_add_temperature_measurement] measurement added; details: temperature = 35.79ºC
+[0:0:0:36:38] [measurements_v2_manager_send_measurements] Measurement packet added; Details: measurements concatenated = 1; seq number = 18; size = 40; content = [02002502a9cc49bc130a440000000000008cc50c00120000000e0100010000000006420f33334d7a]
+[0:0:0:36:41] [measurements_v2_manager_delete_measurements] Deleting measurements.
+[0:0:0:40:10] [main] Another minute...
+[0:0:0:42:15] [app_body_temperature_loop] Circuit powered on
+[0:0:0:42:15] [app_body_temperature_loop] Read started
+[0:0:0:42:15] [app_body_temperature_loop] Circuit powered off
+[0:0:0:42:16] [app_body_temperature_loop] Calculated Res:3165, Low Resolution temperature:35.79ºC
+[0:0:0:42:17] [ads1114_readValue_cb] data collected; voltage = 0.007V 
+[0:0:0:42:17] [app_body_temperature_loop] Let's upload
+[0:0:0:42:18] [measurements_v2_manager_add_measurement] Measurement packet stored.
+[0:0:0:42:18] [ntc_add_temperature_measurement] measurement added; details: temperature = 35.79ºC
+[0:0:0:42:19] [measurements_v2_manager_send_measurements] Measurement packet added; Details: measurements concatenated = 1; seq number = 19; size = 40; content = [02002502a9cc49bc130a44000000000000a4220c00130000000e0100010000000006420f33335d98]
+[0:0:0:42:22] [measurements_v2_manager_delete_measurements] Deleting measurements.
+[0:0:0:42:37] [app_body_temperature_loop] Circuit powered on
+[0:0:0:42:37] [app_body_temperature_loop] Read started
+[0:0:0:42:37] [app_body_temperature_loop] Circuit powered off
+[0:0:0:42:37] [app_body_temperature_loop] Calculated Res:3166, Low Resolution temperature:35.79ºC
+[0:0:0:42:39] [ads1114_readValue_cb] data collected; voltage = 0.007V 
+[0:0:0:42:39] [app_body_temperature_loop] Let's upload
+[0:0:0:42:40] [measurements_v2_manager_add_measurement] Measurement packet stored.
+[0:0:0:42:40] [ntc_add_temperature_measurement] measurement added; details: temperature = 35.79ºC
+[0:0:0:42:41] [measurements_v2_manager_send_measurements] Measurement packet added; Details: measurements concatenated = 1; seq number = 20; size = 40; content = [02002502a9cc49bc130a44000000000000a4380c00140000000e0100010000000006420f33332f36]
+[0:0:0:42:43] [measurements_v2_manager_delete_measurements] Deleting measurements.
+
++SHREQ: "POST",201,24[0:0:0:42:319] [uplink_loop] Data successfully uploaded. Deleting packets from queue.
+[0:0:0:42:319] [uplink_loop] Starting read procedure of machinates returning packet.
+[0:0:0:42:319] [uplink_loop] Going to delete packet with seq number = 8
+[0:0:0:42:319] [gama_queues_print_seq_numbers] sequence numbers = 9; 10; 12; 13; 14; 15; 16; 17; 18; 19; 20
+[0:0:0:42:319] [uplink_loop] Going to delete packet with seq number = 9
+[0:0:0:42:319] [gama_queues_print_seq_numbers] sequence numbers = 10; 12; 13; 14; 15; 16; 17; 18; 19; 20
+[0:0:0:42:319] [uplink_loop] Going to delete packet with seq number = 10
+[0:0:0:42:319] [gama_queues_print_seq_numbers] sequence numbers = 12; 13; 14; 15; 16; 17; 18; 19; 20
+[0:0:0:42:319] [uplink_loop] Going to delete packet with seq number = 12
+[0:0:0:42:319] [gama_queues_print_seq_numbers] sequence numbers = 13; 14; 15; 16; 17; 18; 19; 20
+[0:0:0:42:319] [uplink_loop] Going to delete packet with seq number = 13
+[0:0:0:42:319] [gama_queues_print_seq_numbers] sequence numbers = 14; 15; 16; 17; 18; 19; 20
+[0:0:0:42:319] [uplink_loop] Going to delete packet with seq number = 14
+[0:0:0:42:319] [gama_queues_print_seq_numbers] sequence numbers = 15; 16; 17; 18; 19; 20
+[0:0:0:42:319] [uplink_loop] Going to delete packet with seq number = 15
+[0:0:0:42:319] [gama_queues_print_seq_numbers] sequence numbers = 16; 17; 18; 19; 20
+
+AT+SHREAD=0,24
+OK
++SHREAD: 24[0:0:0:43:362] [uplink_process_downloaded_messages] No messages received.
+[0:0:0:43:370] [uplink_loop] Starting upload procedure.
+[0:0:0:43:370] [uplink_loop] Upload triggered by condition a (queue data size exceeds threshold to upload).
+[0:0:0:43:370] [uplink_loop] Upload triggered by condition c (uplink module is powered on. Let's upload).
+[0:0:0:43:370] [uplink_loop] Upload triggered by condition f (we just finished this upload but we have more to go).
+[0:0:0:43:371] [cellular_http_state_machine] more data received so let's go again without closing the http session
+[0:0:0:43:371] [uplink_loop] Let's add packets to uplink!
+[0:0:0:43:371] [uplink_loop] Trying to upload 5 messages.
+[0:0:0:43:371] [uplink_loop] Concatenating packet with seq number = 16
+[0:0:0:43:371] [uplink_loop] Concatenating packet with seq number = 17
+[0:0:0:43:371] [uplink_loop] Concatenating packet with seq number = 18
+[0:0:0:43:371] [uplink_loop] Concatenating packet with seq number = 19
+[0:0:0:43:371] [uplink_loop] Concate
+AgQAAAFrDhVPPwAAAAAAAA==
+AT+SHBOD=288,2000
+> AgECqcxJvBMKRAAAAAUCACUCqcxJvBMKRAAAAAAAADQYDAAQAAAADgEAAQAAAAAGQg7MzVagAgAlAqnMSbwTCkQAAAAAAAAcuwwAEQAAAA4BAAEAAAAABkIOzM1GQgIAJQKpzEm8EwpEAAAAAAAAHKYMABIAAAAOAQABAAAAAAZCDzMzTXoCACUCqcxJvBMKRAAAAAAAAAVJDAATAAAADgEAAQAAAAAGQg8zM12YAgAlAqnMSbwTCkQAAAAAAAAFMwwAFAAAAA4BAAEAAAAABkIPMzMvNgAA
+OK
+AT+SHREQ="",3
+OK[0:0:0:45:14] [charge_loop] Read started
+[0:0:0:45:14] [charge_loop] data collected; voltage = 3.847V, percentage = 57%
+[0:0:0:45:15] [measurements_v2_manager_add_measurement] Measurement packet stored.
+[0:0:0:45:15] [charge_add_measurement] measurement added; details: value = 3.847V
+[0:0:0:45:16] [measurements_v2_manager_send_measurements] Measurement packet added; Details: measurements concatenated = 1; seq number = 21; size = 40; content = [02002502a9cc49bc130a44000000000000afd70c00150000000e010007000000000440763d71e890]
+[0:0:0:45:19] [measurements_v2_manager_delete_measurements] Deleting measurements.
+[0:0:0:48:18] [app_body_temperature_loop] Circuit powered on
+[0:0:0:48:18] [app_body_temperature_loop] Read started
+[0:0:0:48:18] [app_body_temperature_loop] Circuit powered off
+[0:0:0:48:18] [app_body_temperature_loop] Calculated Res:3166, Low Resolution temperature:35.79ºC
+[0:0:0:48:20] [ads1114_readValue_cb] data collected; voltage = 0.011V 
+[0:0:0:48:20] [app_body_temperature_loop] Let's upload
+[0:0:0:48:21] [measurements_v2_manager_add_measurement] Measurement packet stored.
+[0:0:0:48:21] [ntc_add_temperature_measurement] measurement added; details: temperature = 35.79ºC
+[0:0:0:48:22] [measurements_v2_manager_send_measurements] Measurement packet added; Details: measurements concatenated = 1; seq number = 22; size = 40; content = [02002502a9cc49bc130a44000000000000bb950c00160000000e0100010000000006420f33330ef2]
+[0:0:0:48:25] [measurements_v2_manager_delete_measurements] Deleting measurements.
+[0:0:0:48:39] [app_body_temperature_loop] Circuit powered on
+[0:0:0:48:39] [app_body_temperature_loop] Read started
+[0:0:0:48:39] [app_body_temperature_loop] Circuit powered off
+[0:0:0:48:39] [app_body_temperature_loop] Calculated Res:3152, Low Resolution temperature:35.9ºC
+[0:0:0:48:41] [ads1114_readValue_cb] data collected; voltage = 0.011V 
+[0:0:0:48:41] [app_body_temperature_loop] Let's upload
+[0:0:0:48:42] [measurements_v2_manager_add_measurement] Measurement packet stored.
+[0:0:0:48:42] [ntc_add_temperature_measurement] measurement added; details: temperature = 35.9ºC
+[0:0:0:48:43] [measurements_v2_manager_send_measurements] Measurement packet added; Details: measurements concatenated = 1; seq number = 23; size = 40; content = [02002502a9cc49bc130a44000000000000bbaa0c00170000000e0100010000000006420f999ac866]
+[0:0:0:48:45] [measurements_v2_manager_delete_measurements] Deleting measurements.
+
++SHREQ: "POST",201,24[0:0:0:48:312] [uplink_loop] Data successfully uploaded. Deleting packets from queue.
+[0:0:0:48:312] [uplink_loop] Starting read procedure of machinates returning packet.
+[0:0:0:48:312] [uplink_loop] Going to delete packet with seq number = 16
+[0:0:0:48:312] [gama_queues_print_seq_numbers] sequence numbers = 17; 18; 19; 20; 21; 22; 23
+[0:0:0:48:312] [uplink_loop] Going to delete packet with seq number = 17
+[0:0:0:48:312] [gama_queues_print_seq_numbers] sequence numbers = 18; 19; 20; 21; 22; 23
+[0:0:0:48:312] [uplink_loop] Going to delete packet with seq number = 18
+[0:0:0:48:312] [gama_queues_print_seq_numbers] sequence numbers = 19; 20; 21; 22; 23
+[0:0:0:48:312] [uplink_loop] Going to delete packet with seq number = 19
+[0:0:0:48:312] [gama_queues_print_seq_numbers] sequence numbers = 20; 21; 22; 23
+[0:0:0:48:312] [uplink_loop] Going to delete packet with seq number = 20
+[0:0:0:48:312] [gama_queues_print_seq_numbers] sequence numbers = 21; 22; 23
+
+AT+SHREAD=0,24
+OK
++SHREAD: 24[0:0:0:49:346] [uplink_process_downloaded_messages] No messages received.
+[0:0:0:49:354] [uplink_loop] Starting upload procedure.
+[0:0:0:49:354] [uplink_loop] Upload triggered by condition a (queue data size exceeds threshold to upload).
+[0:0:0:49:354] [uplink_loop] Upload triggered by condition c (uplink module is powered on. Let's upload).
+[0:0:0:49:354] [uplink_loop] Upload triggered by condition f (we just finished this upload but we have more to go).
+[0:0:0:49:355] [cellular_http_state_machine] more data received so let's go again without closing the http session
+[0:0:0:49:355] [uplink_loop] Let's add packets to uplink!
+[0:0:0:49:355] [uplink_loop] Trying to upload 3 messages.
+[0:0:0:49:355] [uplink_loop] Concatenating packet with seq number = 21
+[0:0:0:49:355] [uplink_loop] Concatenating packet with seq number = 22
+[0:0:0:49:355] [uplink_loop] Concatenating packet with seq number = 23
+[0:0:0:49:355] [cellular_set_data_to_upload] upload data content: AgECqcxJvBMKRAAAAAMCACUCqcxJvBMKRAAAAAAAAB
+AT+SHBOD=184,2000
+> AgECqcxJvBMKRAAAAAMCACUCqcxJvBMKRAAAAAAAABD0DAAVAAAADgEABwAAAAAEQHY9ceiQAgAlAqnMSbwTCkQAAAAAAAAFNgwAFgAAAA4BAAEAAAAABkIPMzMO8gIAJQKpzEm8EwpEAAAAAAAABSEMABcAAAAOAQABAAAAAAZCD5mayGYAAA==
+OK
+AT+SHREQ="",3
+OK[0:0:0:50:10] [main] Another minute...
+
++SHREQ: "POST",201,24[0:0:0:52:635] [uplink_loop] Data successfully uploaded. Deleting packets from queue.
+[0:0:0:52:635] [uplink_loop] Starting read procedure of machinates returning packet.
+[0:0:0:52:635] [uplink_loop] Going to delete packet with seq number = 21
+[0:0:0:52:635] [gama_queues_print_seq_numbers] sequence numbers = 22; 23
+[0:0:0:52:635] [uplink_loop] Going to delete packet with seq number = 22
+[0:0:0:52:635] [gama_queues_print_seq_numbers] sequence numbers = 23
+[0:0:0:52:635] [uplink_loop] Going to delete packet with seq number = 23
+[0:0:0:52:635] [gama_queues_print_seq_numbers] no packets inside queue!
+
+AT+SHREAD=0,24
+OK
++SHREAD: 24[0:0:0:53:662] [uplink_process_downloaded_messages] No messages received.
+[0:0:0:54:20] [app_body_temperature_loop] Circuit powered on
+[0:0:0:54:20] [app_body_temperature_loop] Read started
+[0:0:0:54:20] [app_body_temperature_loop] Circuit powered off
+[0:0:0:54:20] [app_body_temperature_loop] Calculated Res:3152, Low Resolution temperature:35.9ºC
+[0:0:0:54:22] [ads1114_readValue_cb] data collected; voltage = 0.013V 
+[0:0:0:54:22] [app_body_temperature_loop] Let's upload
+[0:0:0:54:23] [measurements_v2_manager_add_measurement] Measurement packet stored.
+[0:0:0:54:23] [ntc_add_temperature_measurement] measurement added; details: temperature = 35.9ºC
+[0:0:0:54:24] [measurements_v2_manager_send_measurements] Measurement packet added; Details: measurements concatenated = 1; seq number = 24; size = 40; content = [02002502a9cc49bc130a44000000000000d3070c00180000000e0100010000000006420f999a3dd8]
+[0:0:0:54:26] [measurements_v2_manager_delete_measurements] Deleting measurements.
+[0:0:0:54:24] [uplink_loop] Starting upload procedure.
+[0:0:0:54:24] [uplink_loop] Upload triggered by condition a (queue data size exceeds threshold to upload).
+[0:0:0:54:24] [uplink_loop] Upload triggered by condition c (uplink module is powered on. Let's upload).
+[0:0:0:54:28] [cellular_http_[0:0:0:54:41] [app_body_temperature_loop] Circuit powered on
+[0:0:0:54:41] [app_body_temperature_loop] Read started
+[0:0:0:54:41] [app_body_temperature_loop] Circuit powered off
+[0:0:0:54:42] [app_body_temperature_loop] Calculated Res:3140, [0:0:0:54:43] [ads1114_readValue_cb] data collected; voltage = 0.014V 
+Low Resolution temperature:36ºC
+[0:0:0:54:44] [app_body_temperature_loop] Let's upload
+[0:0:0:54:44] [measurements_v2_manager_add_measurement] Measurement packet stored.
+[0:0:0:54:45] [ntc_add_temperature_measurement] measurement added; details: temperature = 36ºC
+[0:0:0:54:46] [measurements_v2_manager_send_measurements] Measurement packet added; Details: measurements concatenated = 1; seq number = 25; size = 40; content = [02002502a9cc49bc130a44000000000000d31c0c00190000000e010001000000000642100000c2e8]
+[0:0:0:54:49] [measurements_v2_manager_delete_measurements] Deleting measurements.
+
+> AgECqcxJvBMKRAAAAECAqcxJvBMKRAAAAAAAAAAFDAAYAAAADgEAAQAAAAAGQg+Zmj3YAAA=
+OK
+AT+SHREQ="",3
+OK
++SHREQ: "POST",201,24[0:0:0:56:825] [uplink_loop] Data successfully uploaded. Deleting packets from queue.
+[0:0:0:56:825] [uplink_loop] Starting read procedure of machinates returning packet.
+[0:0:0:56:825] [uplink_loop] Going to delete packet with seq number = 24
+[0:0:0:56:825] [gama_queues_print_seq_numbers] sequence numbers = 25
+
+AT+SHREAD=0,24
+OK
++SHREAD: 24[0:0:0:57:852] [uplink_process_downloaded_messages] No messages received.
+[0:0:0:57:860] [uplink_loop] Starting upload procedure.
+[0:0:0:57:860] [uplink_loop] Upload triggered by condition a (queue data size exceeds threshold to upload).
+[0:0:0:57:860] [uplink_loop] Upload triggered by condition c (uplink module is powered on. Let's upload).
+[0:0:0:57:860] [uplink_loop] Upload triggered by condition f (we just finished this upload but we have more to go).
+[0:0:0:57:861] [cellular_http_state_machine] more data received so let's go again without closing the http session
+[0:0:0:57:861] [uplink_loop] Let's add packets to uplink!
+[0:0:0:57:861] [uplink_loop] Trying to upload 1 messages.
+[0:0:0:57:861] [uplink_loop] Concatenating packet with seq number = 25
+[0:0:0:57:861] [cellular_set_data_to_upload] upload data content: AgECqcxJvBMKRAAAAAECACUCqcxJvBMKRAAAAAAAAA7pDAAZAAAADgEAAQAAAAAGQhAAAMLoAAA=
+
+AgQAAAFrDhVPPwAAAAAAAA==
+AT+SHBOD=76,2000
+> AgECqcxJvBMKRAAAAAECACUCqcxJvBMKRAAAAAAAAA7pDAAZAAAADgEAAQAAAAAGQhAAAMLoAAA=
+OK
+AT+SHREQ="",3
+OK[0:0:1:0:10] [main] Another minute...
+[0:0:1:0:15] [charge_loop] Read started
+[0:0:1:0:15] [charge_loop] data collected; voltage = 3.839V, percentage = 56%
+[0:0:1:0:16] [measurements_v2_manager_add_measurement] Measurement packet stored.
+[0:0:1:0:16] [charge_add_measurement] measurement added; details: value = 3.839V
+[0:0:1:0:17] [measurements_v2_manager_send_measurements] Measurement packet added; Details: measurements concatenated = 1; seq number = 26; size = 40; content = [02002502a9cc49bc130a44000000000000ea700c001a0000000e01000700000000044075b97d52ae]
+[0:0:1:0:20] [measurements_v2_manager_delete_measurements] Deleting measurements.
+[0:0:1:0:23] [app_body_temperature_loop] Circuit powered on
+[0:0:1:0:23] [app_body_temperature_loop] Read started
+[0:0:1:0:23] [app_body_temperature_loop] Circuit powered off
+[0:0:1:0:23] [app_body_temperature_loop] Calculated Res:3139, Low Resolution temperature:36ºC
+[[0:0:1:0:25] [ads1114_readValue_cb] data collected; voltage = -0.256V 
+0:0:1:0:24] [app_body_temperature_loop] Let's upload
+[0:0:1:0:26] [measurements_v2_manager_add_measurement] Measurement packet stored.
+[0:0:1:0:26] [ntc_add_temperature_measurement] measurement added; details: temperature = 36ºC
+[0:0:1:0:27] [measurements_v2_manager_send_measurements] Measurement packet added; Details: measrements concatenated = 1; seq number = 27; size = 40; content = [02002502a9cc49bc130a44000000000000ea7a0c001b0000000e010001000000000642100000e32c]
+[0:0:1:0:29] [measurements_v2_manager_delete_measurements] Deleting measurements.
+[0:0:1:0:44] [app_body_temperature_loop] Circuit powered on
+[0:0:1:0:44] [app_body_temperature_loop] Read started
+[0:0:1:0:44] [app_body_temperature_loop] Circuit powered off
+[0:0:1:0:44] [app_body_temperature_loop] Calculated Res:4552, Low Resolution temperature:34ºC
+[[0:0:1:0:46] [ads1114_readValue_cb] data collected; voltage = -0.256V 
+0:0:1:0:45] [app_body_temperature_loop] Let's upload
+[0:0:1:0:47] [measurements_v2_manager_add_measurement] Measurement packet stored.
+[0:0:1:0:47] [ntc_add_temperature_measurement] measurement added; details: temperature = 34ºC
+[0:0:1:0:48] [measurements_v2_manager_send_measurements] Measurement packet added; Details: measurements concatenated = 1; seq number = 28; size = 40; content = [02002502a9cc49bc130a44000000000000ea8f0c001c0000000e0100010000000006420800007b40]
+[0:0:1:0:50] [measurements_v2_manager_delete_measurements] Deleting measurements.
+
++SHREQ: "POST",201,24[0:0:1:2:843] [uplink_loop] Data successfully uploaded. Deleting packets from queue.
+[0:0:1:2:843] [uplink_loop] Starting read procedure of machinates returning packet.
+[0:0:1:2:843] [uplink_loop] Going to delete packet with seq number = 25
+[0:0:1:2:843] [gama_queues_print_seq_numbers] sequence numbers = 26; 27; 28
+
+AT+SHREAD=0,24
+OK
++SHREAD: 24[0:0:1:3:868] [uplink_process_downloaded_messages] No messages received.
+[0:0:1:3:876] [uplink_loop] Starting upload procedure.
+[0:0:1:3:876] [uplink_loop] Upload triggered by condition a (queue data size exceeds threshold to upload).
+[0:0:1:3:876] [uplink_loop] Upload triggered by condition c (uplink module is powered on. Let's upload).
+[0:0:1:3:876] [uplink_loop] Upload triggered by condition f (we just finished this upload but we have more to go).
+[0:0:1:3:877] [cellular_http_state_machine] more data received so let's go again without closing the http session
+[0:0:1:3:878] [uplink_loop] Let's add packets to uplink!
+[0:0:1:3:878] [uplink_loop] Trying to upload 3 messages.
+[0:0:1:3:878] [uplink_loop] Concatenating packet with seq number = 26
+[0:0:1:3:878] [uplink_loop] Concatenating packet with seq number = 27
+[0:0:1:3:878] [uplink_loop] Concatenating packet with seq number = 28
+[0:0:1:3:878] [cellular_set_data_to_upload] upload data content: AgECqcxJvBMKRAAAAAMCACUCqcxJvBMKRAAAAAAAAA8WDAAaAAAADgEABwAAAAAEQHW5fVKuAgAlAqnMSbwTCkQAAAAAAAAPDAwAGwAAAA4BAAEAAAAABkIQAADjLAI
+> AgECqcxJvBMKRAAAAAMCACUCqcxJvBMKRAAAAAAAAA8WDAAaAAAADgEABwAAAAAEQHW5fVKuAgAlAqnMSbwTCkQAAAAAAAAPDAwAGwAAAA4BAAEAAAAABkIQAADjLAIAJQKpzEm8EwpEAAAAAAAADvcMABwAAAAOAQABAAAAAAZCCAAAe0AAAA==
+OK
+AT+SHREQ="",3
+OK

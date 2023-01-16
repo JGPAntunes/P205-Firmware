@@ -1,0 +1,343 @@
+    1829        adds r1, r5, r0
+    4630        mov r0, r6
+    F7FFFF90    bl 0x0003A008 <crc_ops_compute_update_crc>
+--- crc_ops.c -- 142 ---------------------------------------
+/* Now data payload */
+size_t data_start = gama_get_node_header_size_from_message(message);
+crc = crc_ops_compute_update_crc(crc, &message[data_start], (data_size - GAMA_CHECKSUM_SIZE));
+return crc;
+    B011        add sp, sp, #0x44
+    E8BD83F0    pop.w {r4-r9, pc}
+    F64F76FF    movw r6, #0xFFFF
+    E7BE        b 0x0003A072
+    2000        movs r0, #0
+    E7F7        b 0x0003A0E8
+    4620        mov r0, r4
+    E7F5        b 0x0003A0E8
+--- configuration_v2.c -- 234 ------------------------------
+char *token;
+int dim = 0;
+/* get the first token */
+token = strtok(str, delimiter);
+    B570        push {r4-r6, lr}
+    460E        mov r6, r1
+    4614        mov r4, r2
+    F00EFFB7    bl 0x00049074 <strtok>
+--- configuration_v2.c -- 239 ------------------------------
+/* walk through other tokens */
+while( token != NULL ) {
+    2500        movs r5, #0
+    B908        cbnz r0, 0x0003A10E
+--- configuration_v2.c -- 242 ------------------------------
+new_strs[dim++] = token;
+token = strtok(NULL, delimiter);
+}
+*n_elems = dim;
+    6025        str r5, [r4]
+--- configuration_v2.c -- 247 ------------------------------
+elems_strs = new_strs;
+    BD70        pop {r4-r6, pc}
+--- configuration_v2.c -- 242 ------------------------------
+new_strs[dim++] = token;
+    4631        mov r1, r6
+    2000        movs r0, #0
+    3501        adds r5, #1
+--- configuration_v2.c -- 243 ------------------------------
+token = strtok(NULL, delimiter);
+    F00EFFAE    bl 0x00049074 <strtok>
+    E7F6        b 0x0003A108
+    0000        movs r0, r0
+--- configuration_v2.c -- 254 ------------------------------
+unsigned int i;
+char const *action_str;
+bool action_value;
+periodic_json = json_getProperty(services_json,PERIOPDIC_STR);
+    E92D4FF7    push.w {r0-r2, r4-r11, lr}
+    4606        mov r6, r0
+    4608        mov r0, r1
+    4929        ldr r1, =0x0004F45D
+    F004FD19    bl 0x0003EB5C <json_getProperty>
+    2101        movs r1, #1
+    4604        mov r4, r0
+--- configuration_v2.c -- 259 ------------------------------
+if(!json_utils_check(periodic_json,JSON_ARRAY)) {
+    F004FE7F    bl 0x0003EE30 <json_utils_check>
+    B920        cbnz r0, 0x0003A13E
+    2500        movs r5, #0
+    4628        mov r0, r5
+    B003        add sp, sp, #12
+    E8BD8FF0    pop.w {r4-r11, pc}
+--- configuration_v2.c -- 260 ------------------------------
+return false;
+}
+element = json_getChild(periodic_json);
+    F8D4A008    ldr.w r10, [r4, #8]
+--- json.h -- 109 ------------------------------------------
+* @retval The handler of the first property if there is.
+* @retval Null pointer if the json object has not properties.
+*/
+static inline json_t const* json_getChild( json_t const* json ) {
+return json->u.c.child;
+    2100        movs r1, #0
+    4650        mov r0, r10
+    F004FE73    bl 0x0003EE30 <json_utils_check>
+    4605        mov r5, r0
+    2800        cmp r0, #0
+    D0F1        beq 0x0003A134
+    4F1F        ldr r7, =0x0004F466
+    F8DF8084    ldr.w r8, =0x0004F46E
+    F8DF9084    ldr.w r9, =0x0004F473
+    46B3        mov r11, r6
+    2400        movs r4, #0
+--- configuration_v2.c -- 265 ------------------------------
+return false;
+}
+for(i = 0; i < MAX_PERIODICS; ++i,element = json_getSibling(element)) {
+if(!json_utils_check(element,JSON_OBJ)) {
+    2100        movs r1, #0
+    4650        mov r0, r10
+    F004FE65    bl 0x0003EE30 <json_utils_check>
+    4602        mov r2, r0
+    B318        cbz r0, 0x0003A1B2
+--- configuration_v2.c -- 272 ------------------------------
+/*
+* TODO: errors verification
+*/
+measure_value = json_utils_get_int_element_value(element,MEASURE_STR);
+    4639        mov r1, r7
+    4650        mov r0, r10
+    F004FE78    bl 0x0003EE62 <json_utils_get_int_element_value>
+    4641        mov r1, r8
+    9001        str r0, [sp, #4]
+--- configuration_v2.c -- 277 ------------------------------
+rate_value = json_utils_get_int_element_value(element,RATE_STR);
+    4650        mov r0, r10
+    F004FE73    bl 0x0003EE62 <json_utils_get_int_element_value>
+    4649        mov r1, r9
+    9000        str r0, [sp]
+--- configuration_v2.c -- 278 ------------------------------
+action_str = json_getPropertyValue(element,ACTION_STR);
+    4650        mov r0, r10
+    F004FCFA    bl 0x0003EB7A <json_getPropertyValue>
+--- configuration_v2.c -- 280 ------------------------------
+if(strcmp(action_str,UPLOAD_STR) == 0) {
+    4913        ldr r1, =0x0004FA55
+    F00FFA0C    bl 0x000495A4 <strcmp>
+--- configuration_v2.c -- 283 ------------------------------
+else {
+action_value = false;
+}
+service_struct->periodics_array[i].measure = measure_value;
+    3401        adds r4, #1
+    FAB0F080    clz r0, r0
+    9A01        ldr r2, [sp, #4]
+    9B00        ldr r3, [sp]
+    F8CB2000    str.w r2, [r11, #0]
+--- configuration_v2.c -- 288 ------------------------------
+service_struct->periodics_array[i].rate = rate_value;
+    0940        lsrs r0, r0, #5
+    2C05        cmp r4, #5
+    F8CB3004    str.w r3, [r11, #4]
+--- configuration_v2.c -- 289 ------------------------------
+service_struct->periodics_array[i].action = action_value;
+    F88B0008    strb.w r0, [r11, #8]
+--- configuration_v2.c -- 268 ------------------------------
+for(i = 0; i < MAX_PERIODICS; ++i,element = json_getSibling(element)) {
+    F10B0B0C    add.w r11, r11, #12
+    D0C4        beq 0x0003A136
+    F8DAA000    ldr.w r10, [r10, #0]
+    E7D5        b 0x0003A15E
+--- configuration_v2.c -- 289 ------------------------------
+service_struct->periodics_array[i].action = action_value;
+}
+if(i < MAX_PERIODICS) {
+for(unsigned int j = (MAX_PERIODICS-i); j > 0; --j) {
+    F1C40305    rsb.w r3, r4, #5
+    F06F010B    mvn r1, #11
+    FB016303    mla r3, r1, r3, r6
+--- configuration_v2.c -- 294 ------------------------------
+service_struct->periodics_array[MAX_PERIODICS-j].measure = 0;
+    E9C3220F    strd r2, r2, [r3, #0x3C]
+--- configuration_v2.c -- 293 ------------------------------
+for(unsigned int j = (MAX_PERIODICS-i); j > 0; --j) {
+    330C        adds r3, #12
+    429E        cmp r6, r3
+    D1FA        bne 0x0003A1BE
+    E7B5        b 0x0003A136
+    BF00        nop
+    0004F45D    .word 0x0004F45D
+    0004F466    .word 0x0004F466
+    0004FA55    .word 0x0004FA55
+    0004F46E    .word 0x0004F46E
+    0004F473    .word 0x0004F473
+--- configuration_v2.c -- 311 ------------------------------
+int n_elems, app_id;
+struct configuration_v2_upload_info *upload_info;
+struct threshold_infos *threshold_info;
+threshold_json = json_getProperty(services_json,THRESOLD_STR);
+    E92D4FF0    push.w {r4-r11, lr}
+    ED2D8B02    vpush {d8-d8}
+    4607        mov r7, r0
+    B08B        sub sp, sp, #0x2C
+    4608        mov r0, r1
+    4956        ldr r1, =0x0004FA20
+    F004FCB4    bl 0x0003EB5C <json_getProperty>
+    2101        movs r1, #1
+    4604        mov r4, r0
+--- configuration_v2.c -- 316 ------------------------------
+if(!json_utils_check(threshold_json,JSON_ARRAY)) {
+    F004FE1A    bl 0x0003EE30 <json_utils_check>
+    B938        cbnz r0, 0x0003A20E
+    F04F0900    mov.w r9, #0
+    4648        mov r0, r9
+    B00B        add sp, sp, #0x2C
+    ECBD8B02    vpop {d8-d8}
+    E8BD8FF0    pop.w {r4-r11, pc}
+--- configuration_v2.c -- 317 ------------------------------
+return false;
+}
+element = json_getChild(threshold_json);
+    68A6        ldr r6, [r4, #8]
+--- json.h -- 109 ------------------------------------------
+* @retval The handler of the first property if there is.
+* @retval Null pointer if the json object has not properties.
+*/
+static inline json_t const* json_getChild( json_t const* json ) {
+return json->u.c.child;
+    2100        movs r1, #0
+    4630        mov r0, r6
+    F004FE0C    bl 0x0003EE30 <json_utils_check>
+    4681        mov r9, r0
+    2800        cmp r0, #0
+    D0EF        beq 0x0003A1FE
+    F1070A3C    add.w r10, r7, #0x3C
+    2400        movs r4, #0
+--- configuration_v2.c -- 322 ------------------------------
+return false;
+}
+for(i = 0; i < MAX_THRESHOLDS; ++i,element = json_getSibling(element)) {
+if(!json_utils_check(element,JSON_OBJ)) {
+    2100        movs r1, #0
+    4630        mov r0, r6
+    F004FE02    bl 0x0003EE30 <json_utils_check>
+    B968        cbnz r0, 0x0003A24A
+--- configuration_v2.c -- 327 ------------------------------
+service_struct->thresholds_array[i] = NULL;
+    EB070384    add.w r3, r7, r4, lsl #2
+    F1C40405    rsb.w r4, r4, #5
+    63D8        str r0, [r3, #0x3C]
+--- configuration_v2.c -- 376 ------------------------------
+}
+if(i < MAX_THRESHOLDS) {
+for(unsigned int j = (MAX_THRESHOLDS-i); j > 0; --j) {
+    F06F0303    mvn r3, #3
+    FB037404    mla r4, r3, r4, r7
+--- configuration_v2.c -- 381 ------------------------------
+/*service_struct->thresholds_array[MAX_THRESHOLDS-j].measure = 0;
+service_struct->thresholds_array[MAX_THRESHOLDS-j].rate = 0;
+service_struct->thresholds_array[MAX_THRESHOLDS-j].min = 0;
+service_struct->thresholds_array[MAX_THRESHOLDS-j].max = 0;*/
+service_struct->thresholds_array[MAX_THRESHOLDS-j] = NULL;
+    6520        str r0, [r4, #0x50]
+--- configuration_v2.c -- 380 ------------------------------
+for(unsigned int j = (MAX_THRESHOLDS-i); j > 0; --j) {
+    3404        adds r4, #4
+    42A7        cmp r7, r4
+    D1FB        bne 0x0003A240
+    E7DB        b 0x0003A202
+--- configuration_v2.c -- 333 ------------------------------
+measure_value = json_utils_get_int_element_value(element,MEASURE_STR);
+    4940        ldr r1, =0x0004F466
+    4630        mov r0, r6
+    F004FE08    bl 0x0003EE62 <json_utils_get_int_element_value>
+    493F        ldr r1, =0x0004F46E
+    9000        str r0, [sp]
+--- configuration_v2.c -- 334 ------------------------------
+rate_value = json_utils_get_int_element_value(element,RATE_STR);
+    4630        mov r0, r6
+    F004FE03    bl 0x0003EE62 <json_utils_get_int_element_value>
+    493D        ldr r1, =0x0004F47A
+    4683        mov r11, r0
+--- configuration_v2.c -- 335 ------------------------------
+min_value = json_utils_get_int_element_value(element,MIN_STR);
+    4630        mov r0, r6
+    F004FDFE    bl 0x0003EE62 <json_utils_get_int_element_value>
+    493C        ldr r1, =0x0004F47E
+    EE080A90    vmov s17, r0
+--- configuration_v2.c -- 336 ------------------------------
+max_value = json_utils_get_int_element_value(element,MAX_STR);
+    4630        mov r0, r6
+    F004FDF8    bl 0x0003EE62 <json_utils_get_int_element_value>
+    EE080A10    vmov s16, r0
+--- configuration_v2.c -- 337 ------------------------------
+action_str = json_getPropertyValue(element,ACTION_STR);
+    4939        ldr r1, =0x0004F473
+    4630        mov r0, r6
+    F004FC7E    bl 0x0003EB7A <json_getPropertyValue>
+    F8DA5000    ldr.w r5, [r10, #0]
+    9B00        ldr r3, [sp]
+    EEF88AE8    vcvt.f32.s32 s17, s17
+    EEB88AC8    vcvt.f32.s32 s16, s16
+    E9C53B00    strd r3, r11, [r5, #0]
+    EDC58A02    vstr s17, [r5, #8]
+    ED858A03    vstr s16, [r5, #12]
+    4680        mov r8, r0
+--- configuration_v2.c -- 339 ------------------------------
+service_struct->thresholds_array[i]->measure = measure_value;
+service_struct->thresholds_array[i]->rate = rate_value;
+service_struct->thresholds_array[i]->min = min_value;
+service_struct->thresholds_array[i]->max = max_value;
+service_struct->thresholds_array[i]->aux_timestamp = rtc_get_milliseconds();
+    F007FE29    bl 0x00041EF0 <rtc_get_milliseconds>
+    F85A3B04    ldr r3, [r10], #4
+    E9C50104    strd r0, r1, [r5, #16]
+--- configuration_v2.c -- 344 ------------------------------
+service_struct->thresholds_array[i]->trigger = false;
+    F10D0B10    add.w r11, sp, #16
+    2500        movs r5, #0
+    765D        strb r5, [r3, #25]
+--- configuration_v2.c -- 345 ------------------------------
+service_struct->thresholds_array[i]->number_of_uploads_actions = 0;
+    61DD        str r5, [r3, #28]
+--- configuration_v2.c -- 346 ------------------------------
+service_struct->thresholds_array[i]->number_of_thresholds_actions = 0;
+    62DD        str r5, [r3, #0x2C]
+--- configuration_v2.c -- 347 ------------------------------
+/* SET ACTION (verify if it is upload or threshold ) */
+n_elems = 0;
+    492B        ldr r1, =0x0004C1EC
+    9503        str r5, [sp, #12]
+--- configuration_v2.c -- 350 ------------------------------
+configuration_v2_strtok((char*)action_str,",",&n_elems,threshold_actions);
+    465B        mov r3, r11
+    AA03        add r2, sp, #12
+    4640        mov r0, r8
+    F7FFFF1E    bl 0x0003A0FC <configuration_v2_strtok>
+--- configuration_v2.c -- 351 ------------------------------
+for(unsigned int j = 0; j < n_elems; j++) {
+    9B03        ldr r3, [sp, #12]
+    42AB        cmp r3, r5
+    D804        bhi 0x0003A2D0
+--- configuration_v2.c -- 325 ------------------------------
+for(i = 0; i < MAX_THRESHOLDS; ++i,element = json_getSibling(element)) {
+    3401        adds r4, #1
+--- json.h -- 98 -------------------------------------------
+* @retval The handler of the next sibling if found.
+* @retval Null pointer if the json property is the last one.
+*/
+static inline json_t const* json_getSibling( json_t const* json ) {
+return json->sibling;
+    2C05        cmp r4, #5
+    D09A        beq 0x0003A202
+    6836        ldr r6, [r6]
+    E7A9        b 0x0003A224
+--- configuration_v2.c -- 349 ------------------------------
+n_elems = 0;
+configuration_v2_strtok((char*)action_str,",",&n_elems,threshold_actions);
+for(unsigned int j = 0; j < n_elems; j++) {
+n_elems = 0;
+    AB07        add r3, sp, #28
+    4923        ldr r1, =0x0004C1EC
+    F85B0025    ldr.w r0, [r11, r5, lsl #2]
+    F04F0800    mov.w r8, #0
+    AA03        add r2, sp, #12
