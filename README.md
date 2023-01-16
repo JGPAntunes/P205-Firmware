@@ -11,5 +11,5 @@ The final hierarchy is available in the "images" folder.
 
 All the code was developed in SEGGER Embedded Studio using JLink to flash our custom boards.
 
-# Disclaimer! To accelerate development, a partner company provided a few libraries manly for the cloud communications (since we're also using their cloud),
+# Disclaimer! To accelerate development, a partner company provided a few libraries mainly for the cloud communications (since we're also using their cloud),
 and since those libraries have proprietary content, the respective folders are empty.
